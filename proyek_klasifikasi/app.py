@@ -31,7 +31,7 @@ def load_model():
     model.fc = nn.Linear(num_ftrs, len(CLASS_NAMES))
     
     # Memuat bobot model terbaik
-    model.load_state_dict(torch.load("proyek_klasifikasi/model_terbaik.pth", map_location=device))
+    model.load_state_dict(torch.load("model_terbaik.pth", map_location=device))
     model.eval()
     return model
 
