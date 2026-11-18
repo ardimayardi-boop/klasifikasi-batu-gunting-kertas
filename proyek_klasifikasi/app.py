@@ -1,4 +1,5 @@
 import streamlit as st
+import os 
 import torch
 import torch.nn as nn
 from torchvision import models, transforms
@@ -31,7 +32,7 @@ def load_model():
     model.fc = nn.Linear(num_ftrs, len(CLASS_NAMES))
     
     # Memuat bobot model terbaik
-    model.load_state_dict(torch.load("model_terbaik.pth", map_location=device))
+    model.load_state_dict(torch.load(os.path.join(os.path.dirname(__file__), "model_terbaik.pth"), map_location=device))
     model.eval()
     return model
 
