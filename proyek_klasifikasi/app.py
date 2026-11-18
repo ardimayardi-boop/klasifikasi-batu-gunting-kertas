@@ -17,7 +17,7 @@ def load_model():
     
     # Download otomatis dari Google Drive jika belum ada
     if not os.path.exists(output):
-        gdown.download(url, output, quiet=False, fuzzy=True)
+        gdown.download(url, output, quiet=False)
         
     # Inisialisasi arsitektur & load state_dict
     model = models.resnet18(pretrained=False)
